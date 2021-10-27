@@ -1,0 +1,37 @@
+{
+  "name": "TeachThruTalk",
+  "version": "1.0.0",
+  "description": "this application aims to connect people of different native languages in a message board conversational style where a user can sign up and keep track of threads in different languages to get a glimpse of conversational language and connect with people across the globe.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js",
+    "watch": "nodemon server.js",
+    "seed": "node seeds/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FilipAlH/TeachThruTalk.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FilipAlH/TeachThruTalk/issues"
+  },
+  "homepage": "https://github.com/FilipAlH/TeachThruTalk#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
+    "express-session": "^1.17.2",
+    "handlebars": "^4.7.7",
+    "mysql2": "^2.3.2",
+    "sequelize": "^6.8.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.14"
+  }
+}
