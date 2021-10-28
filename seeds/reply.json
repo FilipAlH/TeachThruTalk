@@ -2,41 +2,49 @@
     {
         "body": "it was excellent my good sir.",
         "thread_id": 1,
-        "user_id": 2
+        "user_id": 2,
+        "language_id": "en"
     },
     {
         "body": "i had a terrible day - someone please ask me about it.",
         "thread_id": 1,
-        "user_id": 4
+        "user_id": 4,
+        "language_id": "en"
     },
     {
         "body": "my most heckin goodest doggo.",
         "thread_id": 2,
         "user_id": 1
+        ,"language_id": "de"
     },
     {
         "body": "cats are the way to go.",
         "thread_id": 2,
-        "user_id": 3
+        "user_id": 3,
+        "language_id": "de"
     },
     {
         "body": "you unclutured swine, the best food is genuine italian pasta.",
         "thread_id": 3,
-        "user_id": 2
+        "user_id": 2,
+        "language_id": "ko"
     },
     {
         "body": "i only eat the most traditional of south american cuisine.",
         "thread_id": 3,
-        "user_id": 4
+        "user_id": 4,
+        "language_id": "ko"
     },
     {
         "body": "mine is dwayne 'the rock' johnson.",
         "thread_id": 4,
-        "user_id": 3
+        "user_id": 3,
+        "language_id": "ja"
     },
     {
         "body": "dwayne aint shit, if you arent repping schwartzenegger you arent a fan of bodybuilding.",
         "thread_id": 4,
-        "user_id": 1
+        "user_id": 1,
+        "language_id": "ja"
     }
 ]

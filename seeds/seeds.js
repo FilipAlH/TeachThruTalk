@@ -11,17 +11,18 @@ const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
   const language = await Language.bulkCreate(LanguageSeedData);
+  const user = await User.bulkCreate(UserSeedData);
   const thread = await Thread.bulkCreate(ThreadSeedData);
   const reply = await Reply.bulkCreate(ReplySeedData);
-  const user = await User.bulkCreate(UserSeedData);
+  
 
 
-  for (const { id } of thread) {
-    // Need to include a valid driver_id when creating a license
-    const newReply = await Reply.create({
-      thread_id: id,
-    });
-  }
+//   for (const { id } of thread) {
+//     // Need to include a valid driver_id when creating a license
+//     const newReply = await Reply.create({
+//       thread_id: id,
+//     });
+//   }
 
   process.exit(0);
 };

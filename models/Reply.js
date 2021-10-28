@@ -16,6 +16,7 @@ Reply.init(
         type:DataTypes.STRING, 
     },
     thread_id:{
+      type: DataTypes.INTEGER,
         references:{
             model:'thread',
             key:'id',
@@ -29,7 +30,7 @@ Reply.init(
         },
       },
     language_id:{
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     references:{
         model:'language',
         key:'id',
