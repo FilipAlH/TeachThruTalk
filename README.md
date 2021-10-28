@@ -21,7 +21,7 @@ Summary: This application aims to connect people of different native languages i
 
 ## Installation
 
-N/A. (This app is accessed via browser)
+This app does not require an installation, and can be accessed via a web browswer on [here](https://TBD).
 
 ## Dependencies
 
@@ -46,7 +46,7 @@ Click [here](https://choosealicense.com/licenses/mit) for MIT license informatio
 
 ## Tests
 
-N/A (this app is accessed via a browser)
+Will be provided, TBD.
 
 ## Technologies Used
 
