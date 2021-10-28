@@ -1,15 +1,14 @@
-const languages = require("express").Router();
-const sequelize = require('../config/connection');
-const {
-  readFromFile,
-} = require("../helpers/fsutil");
+const router = require('express').Router();
+const { Language } = require('../../models');
 
-// Route for retrieving languages
-
-languages.get("/", (req, res) => {
-  readFromFile("./").then((data) => res.json(JSON.parse(data)));
+// Get Languages
+router.get('/', async (req, res) => {
+  try {
+    const languageData = await Language.findAll();
+    res.status(200).json(languageData);
+  } catch (err) {
+    res.status(400).json(err);
+  }
 });
 
-
-// Exporting Languages
-module.exports = languages;
+module.exports = router;
