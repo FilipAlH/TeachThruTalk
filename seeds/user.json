@@ -1,0 +1,26 @@
+[
+    {
+        "name": "Stephany",
+        "email": "steph@email.com",
+        "password": "password1",
+        "location": "Toronto, Ontario"
+    },
+    {
+        "name": "Jeffrey",
+        "email":"jeff@email.com",
+        "password":"password2",
+        "location": "Hanburg, Germany"
+    },
+    {
+        "name": "Aar",
+        "email":"Aar@email.com",
+        "password":"password3",
+        "location": "Seoul, Korea"
+    },
+    {
+        "name": "Filip",
+        "email":"filip@email.com",
+        "password":"password4",
+        "location": "Sau Paulo, Brazil"
+    }
+]

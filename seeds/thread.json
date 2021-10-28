@@ -1,0 +1,26 @@
+[
+    {
+        "title": "How was your day?",
+        "body": "In this thread we can discuss our day.",
+        "user_id": 1,
+        "language_id": "en"
+    },
+    {
+        "title": "What is your favorite animal and why?",
+        "body": "In this thread we can discuss our favorite animals.",
+        "user_id": 2,
+        "language_id": "de"
+    },
+    {
+        "title": "what is your favorite food - discuss?",
+        "body": "what is your favorite food and why is it pizza?",
+        "user_id": 3,
+        "language_id": "ko"
+    },
+    {
+        "title": "who is your favorite foreign celebrity?",
+        "body": "mine is Hoyeon Jung",
+        "user_id": 4,
+        "language_id": "ja"
+    }
+]
