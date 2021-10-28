@@ -54,10 +54,10 @@ This application uses the following technologies: HTML, CSS, JavaScript, Bootstr
 
 ## Questions
 
-Github:
-Email:
+[Github:](https://github.com/FilipAlH/TeachThruTalk#TeachThruTalk)
+Email: [Email Address](tbd@tbd.com)
 
-Please feel free to contact us  further questions via email, which is my prefered method.
+Please feel free to contact us  further questions via email, which is our prefered method.
 
 ## Screenshots
 
