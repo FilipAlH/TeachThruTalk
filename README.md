@@ -36,7 +36,7 @@ This application can be accessed on on the web [here](https://TBD).
 1. [Jeff](https://github.com/Jeffiftyone)
 2. [Stephanie](https://github.com/Wickette)
 3. [Filip](https://github.com/FilipAlH)
-4. [Aar](https://https://github.com/Jeffiftyone)
+4. [Aar](https://github.com/AarKaiser)
 
 ## Licenses
 
