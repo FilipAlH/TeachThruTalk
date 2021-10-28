@@ -33,10 +33,10 @@ This application can be accessed on on the web [here](https://TBD).
 
 ## Contributing
 
-[Jeff](https://https://github.com/Jeffiftyone)
-[Stephanie](https://https://github.com/Wickette)
-[Filip](https://https://github.com/FilipAlH)
-[Aar](https://https://github.com/Jeffiftyone)
+1. [Jeff](https://github.com/Jeffiftyone)
+2. [Stephanie](https://github.com/Wickette)
+3. [Filip](https://github.com/FilipAlH)
+4. [Aar](https://https://github.com/Jeffiftyone)
 
 ## Licenses
 
