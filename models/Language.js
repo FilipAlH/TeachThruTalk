@@ -7,10 +7,9 @@ class Language extends Model {}
 Language.init(
   {
     id:{
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
       allowNull:false,
       primaryKey:true,
-      unique: true
     },
     language_name:{
         type:DataTypes.STRING,

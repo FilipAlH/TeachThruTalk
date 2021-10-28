@@ -26,7 +26,7 @@ Thread.init(
         },
       },
     language_id:{
-    type: DataTypes.INTEGER,
+    type: DataTypes.STRING,
     references:{
         model:'language',
         key:'id',
@@ -35,7 +35,7 @@ Thread.init(
   },
   {
     sequelize,
-    timestamps: false,
+    timestamps: true,
     freezeTableName: true,
     underscored: true,
     modelName: 'thread',
