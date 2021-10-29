@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Thread } = require('../../models');
+const { Thread, Language } = require('../../models');
 
 
 //To grab all the threads to be displayed 
@@ -8,13 +8,15 @@ router.get('/', async (req, res) => {
     try {
         const threadData = await Thread.findAll();
 
-        // const threads = threadData.map((thread) => thread.get({ plain: true }));
+
+        const threads = threadData.map((thread) => thread.get({ plain: true }));
 
         // res.json(threadData)
 
         res.render('threads', {
-            threadData,
-        })
+            threads,
+        });
+
     } catch (error) {
         res.status(500).json(error);
     }

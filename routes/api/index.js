@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const languages = require('./languages')
 const threads = require("./threadRouter")
-const homepage = require('./homepageRoute')
+const homepage = require('../homepageRoute')
 
 router.use('/languages', languages);
 router.use('/threads', threads);

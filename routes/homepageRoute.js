@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { Language, Reply, Thread, User} = require('../../models')
+const { Language, Reply, Thread, User} = require('../models')
 const path = require('path');
 require('dotenv').config();
 const bcrypt = require('bcrypt')
