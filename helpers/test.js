@@ -1,4 +1,6 @@
-const { translate } = require("./translate");
-const text = "Testing how to translate sentences"
+const { response } = require('express');
+const {translateText}=require('./translateText');
 
-translate(text, 'en', 'sp')
+
+
+translateText('Hola como estas?',"FR").then(response=>console.log(response));
