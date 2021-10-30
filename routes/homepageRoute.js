@@ -5,15 +5,9 @@ require('dotenv').config();
 const bcrypt = require('bcrypt')
 
 //get route to retrieve map
-router.get('/map', async(req, res) => {
+router.get('/', async(req, res) => {
     try {
-        fetch('https://open.mapquestapi.com/staticmap/v5/map?key=GW5siBk1Fwy2BCvl8yiO5vzhjmBVYyL5')
-            .then((response) => response.blob())
-                .then((imageFromBlob) => {
-                    const imageURL = URL.createObjectURL(imageFromBlob)
-                    console.log(imageURL)
-                    res.json({"image": imageURL})
-                })
+        res.render('homepage')
     } catch(error) {
         console.log('shit failed')
         res.status(501).json(error)
