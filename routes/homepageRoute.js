@@ -33,7 +33,7 @@ router.get('/language', async (req, res) => {
 //get route for login page
 router.get('/login', async (req, res) => {
     try {
-        res.sendFile(path.join(__dirname, ''))
+        res.render('login')
     } catch (error) {
         res.status(404).json(error);
     }
@@ -44,23 +44,31 @@ router.post('/loginRequest', async (req, res) => {
     try {
         const thisUser = req.body
         const userReportedEmail = await User.findOne({ where: { email: req.body.email }})
-        console.log(userReportedEmail)
+
         if(!userReportedEmail) {
             res.status(400).json({message: "Incorrect email or password, please try again"})
-        } else {
-            thisUser.password = await bcrypt.hash(req.body.password, 10)
-            console.log(req.body)
-            const validatePassword = bcrypt.compareSync(thisUser.password, userReportedEmail.dataValues.password)
 
+        } else {
+            const validatePassword = bcrypt.compareSync(thisUser.password, userReportedEmail.dataValues.password)
+            console.log(req.body)
             if(!validatePassword) {
                 res.status(400).json({message: "Incorrect email or password, please try again"})
                 return
             }
 
-            res.json({ user: userData, message: 'You are now logged in!' });
+            res.json({ message: 'You are now logged in!' });
         }
     } catch (error) {
         res.status(404).json(error);
+    }
+});
+
+//get route for signin page
+router.get('/signup', async (req, res) => {
+    try {
+        res.render('signup')
+    } catch (error) {
+        res.status(400).json(error);
     }
 });
 
@@ -68,7 +76,6 @@ router.post('/loginRequest', async (req, res) => {
 router.post('/signup', async (req, res) => {
     try {
         const newUser = req.body
-        //aready a hook for this
         const userData = await User.create(newUser)
         res.status(200).json(userData)
     } catch (error) {
