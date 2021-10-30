@@ -1,7 +1,7 @@
 const router = require('express').Router();
-const { Reply } = require('../../models');
+const { Reply, Thread} = require('../../models');
 
-//Grab reply by thread id
+//Grab reply by reply id
 router.get('/:id', async (req, res) => {
     try {
         const replyData = await Reply.findAll({
@@ -9,7 +9,6 @@ router.get('/:id', async (req, res) => {
                 thread_id: req.params.id
             }
         });
-        console.log(replyData)
         const replies = replyData.map((reply) => reply.get({ plain: true }))
         res.render('reply', {
             replies
@@ -24,8 +23,8 @@ router.post('/:id', async (req, res) => {
     // create a reply
     try {
       const reply = await Reply.create({
-          body: req.body.body,
-          thread_id: req.params.id
+        body: req.body.body,
+        thread_id: req.params.id
         });
       res.status(200).json(reply);
   
