@@ -3,8 +3,6 @@ require("dotenv").config({path: path.resolve(__dirname, '../.env')})
 const auth_key = process.env.AUTH_KEY;
 const  translate = require("deepl");
 
-console.log(process.env)
-
 async function translateText(data, targetLan){
 
    const result=  await translate({
