@@ -15,10 +15,11 @@ router.get('/', async(req, res) => {
 })
 
 //get route to retrieve languages for samples
-router.get('/language', async (req, res) => {
+router.get('/languages', async (req, res) => {
     try {
         const LanguageData = await Language.findAll();
-        res.status(200).json(LanguageData)
+        //res.status(200).json(LanguageData)
+        res.render('languages');
     } catch (error) {
         res.status(404).json(error);
     }
