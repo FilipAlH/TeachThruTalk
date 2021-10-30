@@ -1,0 +1,30 @@
+
+
+
+<div class="container d-flex justify-content-center">
+    <div class="card">
+        <div class="d-flex flex-row p-3 adiv text-white bg-dark">
+            <span class="pb-3">Discussion Thread</span>
+        </div>
+
+{{!-- Chat bubbles --}}
+{{#each replies as |reply|}}
+        <div class="d-flex flex-row p-3">
+            <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-7.png" width="30" height="30">
+
+            <div class="chat ml-2 p-3">
+                {{body}}
+            </div>
+        </div>
+{{/each}}
+ 
+
+{{!-- Submit text section --}}
+        <div class="form-group px-3"> 
+            <textarea id="body" name="body" class="form-control" rows="5" placeholder="Type your message">{{body}}
+            </textarea> 
+            <input type="button" class="submitReply" value="Submit"/>
+        </div>
+    </div>
+</div>
+
