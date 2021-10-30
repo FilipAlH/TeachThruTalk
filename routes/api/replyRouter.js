@@ -6,24 +6,27 @@ router.get('/:id', async (req, res) => {
     try {
         const replyData = await Reply.findAll({
             where: {
-                reply_id: req.params.id
-            }, 
+                thread_id: req.params.id
+            }
         });
-        const replys = replyData.map((reply) => reply.get({ plain: true }))
-        res.render('replys', {
-            replys
+        console.log(replyData)
+        const replies = replyData.map((reply) => reply.get({ plain: true }))
+        res.render('reply', {
+            replies
         })
-
     } catch (error) {
         res.status(500).json(error);
     }
 });
 
 //create a new reply
-router.post('/', async (req, res) => {
+router.post('/:id', async (req, res) => {
     // create a reply
     try {
-      const reply = await Reply.create(req.body);
+      const reply = await Reply.create({
+          body: req.body.body,
+          thread_id: req.params.id
+        });
       res.status(200).json(reply);
   
     } catch (err) {

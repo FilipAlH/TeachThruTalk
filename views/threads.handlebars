@@ -1,27 +1,30 @@
 <div class="thread-container">
-  <div class="card-header col-md-10 d-grid gap-2 col-6 mx-auto text-center">
+  <div class="card-header text-center">
 
       <h1>
         Threads Dashboard
       </h1>
 
   </div>
-  <!-- We implement the built-in helper, #each. This helper will iterate over dishes -->
-  {{#each threads as |tread|}}
-  <!-- For each dish in the array of dish objects, the following <div> will be rendered. -->
-    
-<div class="d-grid gap-2 col-6 mx-auto">
-  <button class="btn btn-primary" type="button">{{title}}</button>
-</div>
-
-    <ul class="d-grid gap-2 col-6 mx-auto">
-      <li>  
-        {{body}}
-      </li>
-    </ul>
-</div>   
-
+<div class="container mt-5">
+  <div class="row">
+    <div class="col text-center">
+      <button class="btn btn-default">Add a new thread!</button>
     </div>
-    <!-- Below, we close the #each helper. -->
+  </div>
+</div>
+  {{#each threads as |tread|}}
+<div class="m-5 w-50 d-grid gap-2 col-6 mx-auto text-center">    
+<div class="card text-center">
+  <div class="card-header">
+    ~ Thread Topic ~
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">{{title}}</h5>
+    <p class="card-text"><i>{{body}}</i></p>
+    <a href="/api/replies/{{id}}" class="btn btn-primary">Go to discussion</a>
+  </div>
+</div>
+</div>
   {{/each}}
 </div>
