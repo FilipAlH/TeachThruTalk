@@ -1,12 +1,22 @@
 
 
-<div class="btn-group">
-  
-  <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Large button
-  </button>
-  
-  <div class="dropdown-menu">
-    ...
+<div class="language-container">
+  <div class="card-header text-center">
+    <h2>Click a Language to get started!</h2>
   </div>
+ <br>
+ 
+  <div class="container text-center">
+{{#each languages as |lang|}}
+    <div class="row">
+      <div class="col text-center">
+        <a href="/api/threads/{{id}}">
+        <button class="btn btn-primary">{{language_name}}</button>
+        </a>
+    </div>
+  </div>
+  <br>
+ </div>
+   {{/each}}
+  
 </div>
