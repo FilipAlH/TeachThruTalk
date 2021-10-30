@@ -1,4 +1,9 @@
+const path = require("path")
+require("dotenv").config({path: path.resolve(__dirname, '../.env')})
+const auth_key = process.env.AUTH_KEY;
 const  translate = require("deepl");
+
+console.log(process.env)
 
 async function translateText(data, targetLan){
 
@@ -6,7 +11,7 @@ async function translateText(data, targetLan){
         free_api:true,
         text:data,
         target_lang:targetLan,
-        auth_key:"b9cf861c-e361-461f-7cbf-7494b41b1d98:fx"
+        auth_key: auth_key
     })
     return result.data.translations[0].text;
 }
