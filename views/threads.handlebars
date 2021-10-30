@@ -6,13 +6,33 @@
       </h1>
 
   </div>
+  {{!-- {{#if loggedIn}} --}}
 <div class="container mt-5">
   <div class="row">
     <div class="col text-center">
-      <button class="btn btn-default">Add a new thread!</button>
+
+{{!-- hidden new thread form --}}
+      <div id="newThread" style="display: none;">
+        <form>
+          <div class="form-group">
+            <label for="threadTitle">Title of New Thread</label>
+            <input type="text" class="form-control" id="threadTitle" placeholder="Thread Title">
+          </div>
+          <div class="form-group">
+            <label for="threadBody">Describe the thread</label>
+            <input type="text" class="form-control" id="threadBody" placeholder="Description">
+          </div>
+           <input type="button" id="submitThread" value="Submit"/>
+        </form>
+      </div>
+
+       <input type="button" id="newThreadBtn" value="Create a new Thread" style="display: inline;"/>
     </div>
   </div>
 </div>
+
+{{!-- {{/if}} --}}
+
   {{#each threads as |tread|}}
 <div class="m-5 w-50 d-grid gap-2 col-6 mx-auto text-center">    
 <div class="card text-center">
@@ -28,3 +48,7 @@
 </div>
   {{/each}}
 </div>
+
+
+
+<script src="/add-post.js"></script>

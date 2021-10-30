@@ -7,6 +7,7 @@ router.get('/', async (req, res) => {
     try {
         const threadData = await Thread.findAll();
         const threads = threadData.map((thread) => thread.get({ plain: true }));
+        console.log(threadData)
         // res.json(threadData)
         res.render('threads', {
             threads,

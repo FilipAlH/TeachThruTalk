@@ -1,6 +1,3 @@
-
-
-
 <div class="container d-flex justify-content-center">
     <div class="card">
         <div class="d-flex flex-row p-3 adiv text-white bg-dark">
@@ -20,6 +17,7 @@
  
 
 {{!-- Submit text section --}}
+{{!-- {{#if loggedIn}} --}}
         <div class="form-group px-3"> 
             <textarea id="body" name="body" class="form-control" rows="5" placeholder="Type your message">{{body}}
             </textarea> 
@@ -27,4 +25,10 @@
         </div>
     </div>
 </div>
+{{!-- {{else}} --}}
+{{!-- <div>
+    <p>Please login or sign-up to post</p>
+</div> --}}
+{{!-- {{/if}} --}}
 
+<script src="/add-reply.js"></script>
