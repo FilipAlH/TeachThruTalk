@@ -11,6 +11,7 @@ let thread_id=document.location.href.split('http://localhost:3001/api/replies/')
       method: 'POST',
       body: JSON.stringify({
         body
+        
       }),
       headers: {
         'Content-Type': 'application/json',
