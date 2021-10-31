@@ -3,7 +3,7 @@ const { Thread, Language, Reply } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 //Get all threads
-router.get('/', withAuth, async (req, res) => {
+router.get('/', async (req, res) => {
     try {
         const threadData = await Thread.findAll();
         const threads = threadData.map((thread) => thread.get({ plain: true }));
@@ -18,7 +18,7 @@ router.get('/', withAuth, async (req, res) => {
     }
 });
 
-router.get('/:language_id', withAuth, async (req, res) => {
+router.get('/:language_id', async (req, res) => {
     try {
         const threadData = await Thread.findAll({
             where: {language_id: req.params.language_id}
