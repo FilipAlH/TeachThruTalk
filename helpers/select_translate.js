@@ -1,4 +1,4 @@
-const {translateText}=require('../helpers/translateText');
+import {translateText} from "./translateText.js";
 
 $(document).ready(function () {
   $(document).on("mouseup", ".textcont", function () {
@@ -15,4 +15,3 @@ $(document).ready(function () {
     console.log("Highlighted");
   });
 });
-
