@@ -21,13 +21,13 @@ router.get('/:id', async (req, res) => {
 });
 
 //create a new reply
-router.post('/:id', withAuth, async (req, res) => {
+router.post('/:id', async (req, res) => {
     // create a reply
     try {
       const reply = await Reply.create({
         body: req.body.body,
         thread_id: req.params.id
-        });
+      });
       res.status(200).json(reply);
   
     } catch (err) {

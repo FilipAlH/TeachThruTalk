@@ -24,7 +24,6 @@ async function postNewThread(thread_id){
   }
 }
 
-
 async function displayNewForm(event) {
   event.preventDefault();
   document.getElementById("newThread").style.display = "block";
