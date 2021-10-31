@@ -37,26 +37,33 @@ router.get('/login', async (req, res) => {
 
 //post route for login info
 router.post('/login', async (req, res) => {
+    
     try {
         const thisUser = req.body
         const userReportedEmail = await User.findOne({ where: { email: req.body.email }})
-        console.log('success!')
 
         if(!userReportedEmail) {
             res.status(400).json({message: "Incorrect email or password, please try again"})
-
-        } else {
+                return;
+        } 
+        
             const validatePassword = bcrypt.compareSync(thisUser.password, userReportedEmail.dataValues.password)
+            //const validatePassword = await dbUserData.checkPassword(req.body.password);
             console.log(req.body)
+
             if(!validatePassword) {
                 res.status(400).json({message: "Incorrect email or password, please try again"})
                 return
             }
-
-        }
         req.session.save(() => {
+            
+            res
+            .status(200)
+            .json({ user: userReportedEmail, message: 'You are now logged in!' });
             req.session.loggedIn = true;
     });
+ 
+      
     } catch (error) {
         res.status(404).json(error);
         console.log('failed')
@@ -94,9 +101,11 @@ router.post('/signup', async (req, res) => {
             location: req.body.location
         });
         req.session.save(()=>{
+           
+            res.status(200).json(userData);
             req.session.loggedIn = true;
         })
-        res.status(200).json(userData)
+        
     } catch (error) {
         res.status(500).json(error)
     }

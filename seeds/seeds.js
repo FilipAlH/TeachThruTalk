@@ -11,7 +11,10 @@ const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
   const language = await Language.bulkCreate(LanguageSeedData);
-  const user = await User.bulkCreate(UserSeedData);
+  const users = await User.bulkCreate(UserSeedData, {
+    individualHooks: true,
+    returning: true,
+  });
   const thread = await Thread.bulkCreate(ThreadSeedData);
   const reply = await Reply.bulkCreate(ReplySeedData);
   
