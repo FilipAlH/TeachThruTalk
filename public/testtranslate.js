@@ -7,12 +7,9 @@ $(document).ready(function () {
     $(".textcont").html(text.replace(selectedText, spn));
     console.log(selectedText);
   });
+  $(document).on("mouseover", ".highlight", function () {
+    // alert("Works!");
 
-  // // Mouseover Function
-  // $(document).on("mouseover", ".highlight", function () {
-    
-  //   // alert("Works!");
-  //   console.log(response);
-  //   console.log("Highlighted");
-  // });
+    console.log("Highlighted");
+  });
 });
