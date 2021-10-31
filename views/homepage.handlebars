@@ -1,7 +1,21 @@
-<h1> to add map route from new api i found</h1>
+<style>
+#map { position: absolute; top: 200px; bottom: 200px; left: 20vw; right: 20vw; width: 60%; }
+</style>
+<style>
+.marker {
+display: block;
+border: none;
+border-radius: 50%;
+cursor: pointer;
+padding: 0;
+}
+</style>
+<div>
+    <div id="map"></div>
+</div>
 
 <button class="btn btn-danger" id="fetch-button">
 Fetch API
 </button>
-
-<script src="./testingfetch.js"></script>
+<script src="./mapdisplay.js"></script>
+<script src="./saveLocation.js"></script>

@@ -1,9 +1,7 @@
 const router = require('express').Router()
 const { Language, Reply, Thread, User} = require('../models')
-const path = require('path');
 require('dotenv').config();
 const bcrypt = require('bcrypt');
-const { response } = require('express');
 
 //get route to retrieve map
 router.get('/', async(req, res) => {

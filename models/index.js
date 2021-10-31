@@ -20,5 +20,5 @@ module.exports = {
   User,
   Language,
   Thread,
-  Reply
+  Reply,
 };
