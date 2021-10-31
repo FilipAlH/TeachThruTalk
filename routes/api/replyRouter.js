@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const { Reply, Thread} = require('../../models');
+const withAuth = require('../../utils/auth');
 
 //Grab reply by reply id
 router.get('/:id', async (req, res) => {
@@ -20,7 +21,7 @@ router.get('/:id', async (req, res) => {
 });
 
 //create a new reply
-router.post('/:id', async (req, res) => {
+router.post('/:id', withAuth, async (req, res) => {
     // create a reply
     try {
       const reply = await Reply.create({
