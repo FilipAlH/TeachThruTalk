@@ -34,10 +34,11 @@ router.get('/login', async (req, res) => {
 });
 
 //post route for login info
-router.post('/loginRequest', async (req, res) => {
+router.post('/login', async (req, res) => {
     try {
         const thisUser = req.body
         const userReportedEmail = await User.findOne({ where: { email: req.body.email }})
+        console.log('success!')
 
         if(!userReportedEmail) {
             res.status(400).json({message: "Incorrect email or password, please try again"})
@@ -50,12 +51,26 @@ router.post('/loginRequest', async (req, res) => {
                 return
             }
 
-            res.json({ message: 'You are now logged in!' });
         }
+        req.session.save(() => {
+            req.session.loggedIn = true;
+    });
     } catch (error) {
         res.status(404).json(error);
+        console.log('failed')
     }
 });
+
+// Logout
+router.post('/logout', (req, res) => {
+    if (req.session.loggedIn) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    } else {
+      res.status(404).end();
+    }
+  });
 
 //get route for signin page
 router.get('/signup', async (req, res) => {
@@ -75,6 +90,9 @@ router.post('/signup', async (req, res) => {
             email: req.body.email,
             password: req.body.password,
             location: req.body.location
+        });
+        req.session.save(()=>{
+            req.session.loggedIn = true;
         })
         res.status(200).json(userData)
     } catch (error) {

@@ -15,25 +15,26 @@
       <div id="newThread" style="display: none;">
         <form>
           <div class="form-group">
-            <label for="threadTitle">Title of New Thread</label>
-            <input type="text" class="form-control" id="threadTitle" placeholder="Thread Title">
+            <label for="threadTitle"><strong>Title of Thread</strong></label>
+            <input type="text" class="form-control text-center" id="threadTitle" placeholder="Name the title of your new thread...">
           </div>
           <div class="form-group">
-            <label for="threadBody">Describe the thread</label>
-            <input type="text" class="form-control" id="threadBody" placeholder="Description">
+            <label for="threadBody"><strong>Description</strong></label>
+            <input type="text" class="form-control text-center" id="threadBody" placeholder="describe the topic of this thread...">
           </div>
-           <input type="button" id="submitThread" value="Submit"/>
+           <input type="button" class="" id="submitThread" value="Submit"/>
         </form>
       </div>
 
        <input type="button" id="newThreadBtn" value="Create a new Thread" style="display: inline;"/>
+
     </div>
   </div>
 </div>
 
 {{!-- {{/if}} --}}
 
-  {{#each threads as |tread|}}
+{{#each threads as |tread|}}
 <div class="m-5 w-50 d-grid gap-2 col-6 mx-auto text-center">    
 <div class="card text-center">
   <div class="card-header">
@@ -46,9 +47,7 @@
   </div>
 </div>
 </div>
-  {{/each}}
+{{/each}}
 </div>
 
-
-
-<script src="/add-post.js"></script>
+<script src="/add-thread-lang.js"></script>

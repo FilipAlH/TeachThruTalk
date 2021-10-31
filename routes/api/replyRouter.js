@@ -10,6 +10,7 @@ router.get('/:id', async (req, res) => {
             }
         });
         const replies = replyData.map((reply) => reply.get({ plain: true }))
+        console.log(replies)
         res.render('reply', {
             replies
         })

@@ -1,27 +1,25 @@
-<div class="container d-flex justify-content-center">
-    <div class="card">
-        <div class="d-flex flex-row p-3 adiv text-white bg-dark">
-            <span class="pb-3">Discussion Thread</span>
-        </div>
+<div class="mt-12">
+
+    <h1>{{replies.title}}</h1>
+ 
 
 {{!-- Chat bubbles --}}
 {{#each replies as |reply|}}
-        <div class="d-flex flex-row p-3">
-            <img src="https://img.icons8.com/color/48/000000/circled-user-female-skin-type-7.png" width="30" height="30">
 
-            <div class="chat ml-2 p-3">
-                {{body}}
-            </div>
-        </div>
+<div class="container" style="width: 50%; margin-left:auto; margin-right:auto">
+  <img src="/avatar.jpg" width="30" height="30" alt="Avatar">
+  <p>{{body}}</p>
+  <span class="time-right">{{format_date createdAt}}</span>
+</div>
 {{/each}}
  
 
 {{!-- Submit text section --}}
 {{!-- {{#if loggedIn}} --}}
-        <div class="form-group px-3"> 
-            <textarea id="body" name="body" class="form-control" rows="5" placeholder="Type your message">{{body}}
+        <div class="form-group px-3" style="width: 50%; margin-left:auto; margin-right:auto"> 
+            <textarea id="body" name="body" class="form-control" rows="2" placeholder="Type your message">{{body}}
             </textarea> 
-            <input type="button" class="submitReply" value="Submit"/>
+            <input type="button" class="submitReply" style="margin-left:auto; margin-right:auto" value="Submit"/>
         </div>
     </div>
 </div>
