@@ -48,7 +48,7 @@ router.post('/login', async (req, res) => {
         } 
         
             const validatePassword = bcrypt.compareSync(thisUser.password, userReportedEmail.dataValues.password)
-            //const validatePassword = await dbUserData.checkPassword(req.body.password);
+            
             console.log(req.body)
 
             if(!validatePassword) {
@@ -56,11 +56,10 @@ router.post('/login', async (req, res) => {
                 return
             }
         req.session.save(() => {
-            
+            req.session.loggedIn = true;
             res
             .status(200)
             .json({ user: userReportedEmail, message: 'You are now logged in!' });
-            req.session.loggedIn = true;
     });
  
       
@@ -101,9 +100,8 @@ router.post('/signup', async (req, res) => {
             location: req.body.location
         });
         req.session.save(()=>{
-           
-            res.status(200).json(userData);
             req.session.loggedIn = true;
+            res.status(200).json(userData);
         })
         
     } catch (error) {
