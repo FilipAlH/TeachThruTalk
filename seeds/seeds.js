@@ -14,15 +14,6 @@ const seedDatabase = async () => {
   const user = await User.bulkCreate(UserSeedData);
   const thread = await Thread.bulkCreate(ThreadSeedData);
   const reply = await Reply.bulkCreate(ReplySeedData);
-  
-
-
-//   for (const { id } of thread) {
-//     // Need to include a valid driver_id when creating a license
-//     const newReply = await Reply.create({
-//       thread_id: id,
-//     });
-//   }
 
   process.exit(0);
 };
