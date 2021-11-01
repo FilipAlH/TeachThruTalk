@@ -99,5 +99,17 @@ router.post('/signup', async (req, res) => {
         res.status(500).json(error)
     }
 });
+ 
 
+router.get('/mapInfo', async(req, res) => {
+    try {
+        const userLocationAndName = await User.findAll({
+            attributes: ['name', 'location']
+        })
+
+        res.status(200).json(userLocationAndName)
+    } catch (error) {
+        res.status(404).json(error)
+    }
+})
 module.exports = router

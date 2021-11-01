@@ -1,5 +1,45 @@
 mapboxgl.accessToken = 'pk.eyJ1IjoiZmlsaXBhbGgiLCJhIjoiY2t2ZTliNzJmYmZqejJxcTZ5Mzg0eXBkeCJ9.Rbgy_AKOx657SU1EM_F4bw';
-const geojson = {
+
+let geojson;
+
+fetch('./mapInfo', {
+    method: 'get',
+    headers: {
+        'Content-Type': 'application/json',
+    },
+}).then((response) => {
+        if(!response.ok) {
+            throw Error(response.status);
+        } else {
+            return response.json()
+        }
+    }).then((data) => {
+        data.forEach(person => {
+            const name = person.name
+            const location = person.location.split(', ')
+
+            const feature = 
+            `
+            {
+                'type': 'Feature',
+                'properties': {
+                    'message': '${name}',
+                    'iconSize': [40, 40]
+                },
+                'geometry': {
+                    'type': 'Point',
+                    'coordinates': [${parseFloat(location[0])}, ${parseFloat(location[1])}]
+                }
+            },
+            `
+
+            console.log(feature)
+        });
+    })
+    .catch(error => console.log(error)
+)
+
+geojson = {
     'type': 'FeatureCollection',
     'features': [
         {
