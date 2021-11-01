@@ -1,11 +1,11 @@
-<body style="background:url(https://www.tessa-dam.com/files/tessa-dam/background/background_paper-min.jpg)">
+<body style="background: url(https://wallpapercave.com/wp/wp3847364.jpg) no-repeat; background-size:cover; height:100vh">
 <div class="thread-container">
-  <div class="card-header text-center">
+  <div class="text-center">
 
-      <h1>
+      <h1 style="color: white;">
         Threads Dashboard
       </h1>
-
+<hr style="background-color: white;">
   </div>
   {{#if loggedIn}}
 <div class="container mt-5">
@@ -16,18 +16,18 @@
       <div id="newThread" style="display: none;">
         <form>
           <div class="form-group" id ="threadLanguagePrompt" style="display: block;">
-            <label for="threadBody"><strong>Language abbreviation of Thread</strong></label>
-            <input type="text" class="form-control text-center" id="threadLanguage" placeholder="the two letter language abbreviation...">
+            <label for="threadBody" style="color: white; margin-bottom:10px"><strong>Language abbreviation of Thread</strong></label>
+            <input style="width:50%; margin-right:auto; margin-left:auto" type="text" class="form-control text-center" id="threadLanguage" placeholder="the two letter language abbreviation...">
           </div>
           <div class="form-group">
             <label for="threadTitle"><strong>Title of Thread</strong></label>
-            <input type="text" class="form-control text-center" id="threadTitle" placeholder="Name the title of your new thread...">
+            <input style="width:50%; margin-right:auto; margin-left:auto" type="text" class="form-control text-center" id="threadTitle" placeholder="Name the title of your new thread...">
           </div>
           <div class="form-group">
             <label for="threadBody"><strong>Description</strong></label>
-            <input type="text" class="form-control text-center" id="threadBody" placeholder="describe the topic of this thread...">
+            <input style="width:50%; margin-right:auto; margin-left:auto" type="text" class="form-control text-center" id="threadBody" placeholder="describe the topic of this thread...">
           </div>
-           <input type="button" class="" id="submitThread" value="Submit"/>
+           <input style="margin-top: 10px;" type="button" class="" id="submitThread" value="Submit"/>
         </form>
       </div>
 
@@ -45,10 +45,10 @@
   <div class="card-header">
     ~ Thread Topic ~
   </div>
-  <div class="card-body">
+  <div style="background-color: #ababab;" class="card-body">
     <h5 class="card-title">{{title}}</h5>
     <p class="card-text"><i>{{body}}</i></p>
-    <a href="/api/replies/{{id}}" class="btn btn-primary">Go to discussion</a>
+    <a href="/api/replies/{{id}}" class="btn" style="background:radial-gradient(#1fe4f5, #3fbafe)">Go to discussion</a>
   </div>
 </div>
 </div>
