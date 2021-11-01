@@ -2,21 +2,13 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 body {
     background: #EEEEEE;
     font-family: 'Roboto', sans-serif
 }
 
-/* NAV BAR */
-.topnav a:hover {
-    border-bottom: 3px solid red;
-}
-
-
-
-
-/* Reply section styles */
 .card {
     width: 300px;
     border: none;
@@ -68,3 +60,8 @@ body {
     color: #C4C4C4
 }
 
+.highlight {
+    background-color: yellow;
+    position:relative;
+    display:inline-block;
+}
