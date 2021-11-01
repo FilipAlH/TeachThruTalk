@@ -10,15 +10,15 @@ function HoverTranslate() {
       console.log(`"${selectedText}" was highlighted"`);
       
       fetch("/api/translate/", {
-        method: "GET",
+        method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        text: selectedText,
-        language: targLang,
+        body: JSON.stringify({text: selectedText,
+          language: targLang,})
       })
         .then((response) => response.json())
-        .then((data) => console.log(data))
+        .then((data) => console.log(data.translation))
         .catch((error) => {
           console.error("Error:", error);
         });

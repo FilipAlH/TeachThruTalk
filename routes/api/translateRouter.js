@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const { translateText } = require("../../helpers/translateText");
 
-router.get("/", async (req, res) => {
+router.post("/", async (req, res) => {
   let text = req.body.text;
   let lang = req.body.language;
   const translation = await translateText(text, lang);
