@@ -1,6 +1,6 @@
 console.log('translator running')
 
-document.querySelector("main :not(.msger)").addEventListener("mousedown", function () {
+document.querySelector("main :not(.msher)").addEventListener("mousedown", function () {
     document.getElementById('language-field').style.display = "none"
 })
 
