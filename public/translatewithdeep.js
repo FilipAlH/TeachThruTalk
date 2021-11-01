@@ -17,23 +17,23 @@ document.getElementById('translate-button').addEventListener('click', function(e
     let selectedText = window.getSelection().toString();
     console.log(selectedText)
 
-    const requestBody = "auth_key=2f50a44d-d143-747e-881c-048a8f7ea56a:fx&text=" + selectedText + "&target_lang=" + textLanguage
-    console.log(requestBody)
-    getTranslation(requestBody)
+    //const requestBody = "auth_key=2f50a44d-d143-747e-881c-048a8f7ea56a:fx&text=" + selectedText + "&target_lang=" + textLanguage
+    getTranslation(selectedText, textLanguage)
 })
 
 
-async function getTranslation(body) {
-    fetch("https://api-free.deepl.com/v2/translate", {
-        body: body,
+async function getTranslation(text, language) {
+    fetch("/api/translate/", {
+        method: "POST",
         headers: {
-            "Content-Type": "application/x-www-form-urlencoded"
+          "Content-Type": "application/json",
         },
-        method: "POST"
-    })
+        body: JSON.stringify({text: text,
+          language: language,})
+      })
     .then((response) => response.json())
         .then((data) => 
-        alert(data.translations[0].text)
+        alert(data.translation)
         )
     .catch((error) => {
         console.error("Error:", error);
