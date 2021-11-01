@@ -1,17 +1,18 @@
 console.log('translator running')
 
-document.querySelector('.replies-content').addEventListener("mouseup", async function () {
-    // let spn = '<span class="highlight">' + selectedText + "</span>";
-    // let text = document.querySelector(".textcont").textContent();
-    // document.querySelector(".replies-content").innerHTML(text.replace(selectedText, spn));
-    // console.log(`"${selectedText}" was highlighted"`);
+document.querySelector("main :not(.msger)").addEventListener("mousedown", function () {
+    document.getElementById('language-field').style.display = "none"
+})
 
+document.querySelector('.replies-content').addEventListener("mouseup", function () {
     document.getElementById('language-field').style.display = "block"
 })
+
 
 document.querySelector('#translate-button').addEventListener('click', function(event) {
     event.preventDefault();
     console.log("Translate Button Pressed")
+
 
     let textLanguage = document.getElementById('language-abbreviation').selectedOptions[0].value;
     console.log(textLanguage)
