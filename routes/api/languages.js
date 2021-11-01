@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
     const languages = languageData.map((language) => language.get({ plain: true }))
     console.log(languages)
     res.render('languages', {
-      languages
+      languages,loggedIn: req.session.loggedIn
     })
   } catch (err) {
     res.status(400).json(err);

@@ -7,16 +7,7 @@ const bcrypt = require('bcrypt')
 //get route to retrieve map
 router.get('/', async(req, res) => {
     try {
-
-           //IMAGINE LOGGING IN
-           req.session.save(() => {
-            req.session.loggedIn = true;
-      
-            res.status(200);
-          });
-
-        res.render('homepage')
-     
+        res.render('homepage',{loggedIn: req.session.loggedIn})  
         
     } catch(error) {
         console.log('shit failed')
@@ -45,7 +36,7 @@ router.get('/login', async (req, res) => {
 
 //post route for login info
 router.post('/login', async (req, res) => {
-    console.log('login pls')
+
     console.log(req.body)
     try {
         const thisUser = req.body;
@@ -80,7 +71,7 @@ router.post('/login', async (req, res) => {
 //get route for signin page
 router.get('/signup', async (req, res) => {
     try {
-        res.render('signup')
+        res.render('signup',{loggedIn: req.session.loggedIn})
     } catch (error) {
         res.status(400).json(error);
     }
@@ -123,7 +114,7 @@ router.get('/mapInfo', async(req, res) => {
 
 
 router.post('/logout', (req, res) => {
-    if (req.session.logged_in) {
+    if (req.session.loggedIn) {
       req.session.destroy(() => {
         res.status(204).end();
       });
