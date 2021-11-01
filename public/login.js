@@ -20,7 +20,7 @@ const loginUser = async (event) => {
         // If successful, redirect the browser to the profile page
         document.location.replace('/api/languages');
       } else {
-        alert("it didnt work");
+        alert("Email or Password is incorrect");
       }
     };
   

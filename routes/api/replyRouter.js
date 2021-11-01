@@ -7,7 +7,7 @@ router.get('/:id', withAuth,async (req, res) => {
     try {
         const replyData = await Reply.findAll({
             where: {
-                thread_id: req.params.id
+                thread_id: req.params.id,
             }
         });
         console.log(replyData)
