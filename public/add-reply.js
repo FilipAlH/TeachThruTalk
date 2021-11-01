@@ -5,7 +5,7 @@ event.preventDefault();
 
 console.log('test')
 const body = document.getElementById('body').value;
-let thread_id = document.location.href.split('http://localhost:3001/api/replies/');
+let thread_id = document.location.href.split('https://teach-through-talk.herokuapp.com/api/replies/');
 console.log(thread_id)
   
     const response = await fetch(`/api/replies/${thread_id[1]}`, {
