@@ -11,6 +11,7 @@ async function translateText(data, targLang){
         target_lang: targLang,
         auth_key: auth_key
     })
+    
     return result.data.translations[0].text;
 }
 
