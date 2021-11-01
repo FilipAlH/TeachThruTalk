@@ -3,24 +3,24 @@
         "name": "Stephany",
         "email": "steph@email.com",
         "password": "password1",
-        "location": "Toronto, Ontario"
+        "location": "-79.746694, 43.745274"
     },
     {
         "name": "Jeffrey",
         "email":"jeff@email.com",
         "password":"password2",
-        "location": "Hanburg, Germany"
+        "location": "9.992116, 53.55372"
     },
     {
         "name": "Aar",
         "email":"Aar@email.com",
         "password":"password3",
-        "location": "Seoul, Korea"
+        "location": "127.028887, 37.505291"
     },
     {
         "name": "Filip",
         "email":"filip@email.com",
         "password":"password4",
-        "location": "Sau Paulo, Brazil"
+        "location": "-43.9236, -19.8678"
     }
 ]
