@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const { Reply } = require('../../models');
+const withAuth =require('../../utils/auth');
 
 //Grab reply by thread id
-router.get('/:id', async (req, res) => {
+router.get('/:id', withAuth,async (req, res) => {
     try {
         const replyData = await Reply.findAll({
             where: {
@@ -12,7 +13,7 @@ router.get('/:id', async (req, res) => {
         console.log(replyData)
         const replies = replyData.map((reply) => reply.get({ plain: true }))
         res.render('reply', {
-            replies
+            replies , loggedIn: req.session.loggedIn
         })
     } catch (error) {
         res.status(500).json(error);

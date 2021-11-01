@@ -7,7 +7,17 @@ const bcrypt = require('bcrypt')
 //get route to retrieve map
 router.get('/', async(req, res) => {
     try {
+
+           //IMAGINE LOGGING IN
+           req.session.save(() => {
+            req.session.loggedIn = true;
+      
+            res.status(200);
+          });
+
         res.render('homepage')
+     
+        
     } catch(error) {
         console.log('shit failed')
         res.status(501).json(error)
@@ -35,9 +45,12 @@ router.get('/login', async (req, res) => {
 
 //post route for login info
 router.post('/login', async (req, res) => {
+    console.log('login pls')
+    console.log(req.body)
     try {
         const thisUser = req.body;
         const userReportedEmail = await User.findOne({ where: { email: req.body.email }});
+        
         //const userReportedEmail=true;
         if(!userReportedEmail) {
             res.status(400).json({message: "Incorrect email or password, please try again"});
@@ -52,10 +65,13 @@ router.post('/login', async (req, res) => {
                 return;
         }
         req.session.save(() => {
-            req.session.logged_in = true;
-            res.json.status(200).json('success');
-            
+            console.log('this is saving wow')
+            req.session.loggedIn = true;
+            res.status(200).json({userReportedEmail});
           });
+
+          
+          
     } catch (error) {
         res.status(404).json(error);
     }
