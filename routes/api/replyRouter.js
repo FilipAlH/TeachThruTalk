@@ -24,9 +24,15 @@ router.post('/:id', async (req, res) => {
     // create a reply
     try {
       const reply = await Reply.create({
+<<<<<<< HEAD
+        body: req.body.body,
+        thread_id: req.params.id
+      });
+=======
           body: req.body.body,
           thread_id: req.params.id
         });
+>>>>>>> main
       res.status(200).json(reply);
   
     } catch (err) {

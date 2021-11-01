@@ -6,20 +6,20 @@
         "language_id": "en"
     },
     {
-        "title": "What is your favorite animal and why?",
-        "body": "In this thread we can discuss our favorite animals.",
+        "title": "Was ist dein Lieblingstier und warum?",
+        "body": "In diesem Thread können wir über unsere Lieblingstiere diskutieren.",
         "user_id": 2,
         "language_id": "de"
     },
     {
-        "title": "what is your favorite food - discuss?",
-        "body": "what is your favorite food and why is it pizza?",
+        "title": "가장 좋아하는 음식은 무엇입니까 - 토론?",
+        "body": "가장 좋아하는 음식은 무엇이며 왜 피자입니까?",
         "user_id": 3,
         "language_id": "ko"
     },
     {
-        "title": "who is your favorite foreign celebrity?",
-        "body": "mine is Hoyeon Jung",
+        "title": "あなたの好きな外国の有名人は誰ですか？",
+        "body": "私はチョン・ホヨンです",
         "user_id": 4,
         "language_id": "ja"
     }
