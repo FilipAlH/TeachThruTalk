@@ -1,13 +1,14 @@
 <body style="background:url(https://www.tessa-dam.com/files/tessa-dam/background/background_paper-min.jpg);">
 {{!-- Chat bubbles --}}
 
-<div style="  display: flex; justify-content: center; background-image: var(--body-bg); font-family: Helvetica, sans-serif;">
+<div class="reply-area" style="  display: flex; justify-content: center; background-image: var(--body-bg); font-family: Helvetica, sans-serif;">
 <section class="msger" style="display: flex; flex-flow: column wrap; width: 500px; max-width: 867px; margin: 25px 10px; border: var(--border); border-radius: 5px; background: var(--msger-bg); box-shadow: 0 15px 15px -5px rgba(0, 0, 0, 0.2);">
   <header class="msger-header" style="display: flex; padding: 10px; border-bottom: var(--border); background: #eee; color: #666;">
     <div class="msger-header-title">
       <i class="fas fa-comment-alt"></i> Reply Section
     </div>
   </header>
+<div class="replies-content">
 {{#each replies as |reply|}}
   <main class="msger-chat" style="flex: 1; overflow-y: auto; padding: 10px; ::-webkit-scrollbar (width: 6px); ::-webkit-scrollbar-track (background: #ddd);::-webkit-scrollbar-thumb (background: #bdbdbd); background-color: #fcfcfe; background-image: url()">
     <div class="msg" style="display: flex; align-items: flex-end; margin-bottom: 10px;">
@@ -23,6 +24,12 @@
     </div>
   </main>
 {{/each}}
+</div>
+  <div class="form-group" id="language-field" style="display: none">
+    <label for="language-abbreviation"> would you like to translate this text? Highlight what you want to translate and type in a language abbreviation to translate to:</label>
+    <input class="form-control" type="text" id="language-abbreviation"/>
+    <button class="btn btn-primary" type="submit" id="translate-button">translate text</button>
+  </div>
   <form class="msger-inputarea" style=" display: flex; padding: 10px; border-top: var(--border); background: #eee; *padding: 10px; border: none; border-radius: 3px;
   font-size: 1em;">
     <input type="text" id="body" name="body" class="msger-input" style="flex: 1; background: #ddd;" placeholder="Enter your message..."/>{{body}}
@@ -42,3 +49,4 @@
 {{!-- {{/if}} --}}
 
 <script src="/add-reply.js"></script>
+<script src="/translatewithdeep.js"></script>
