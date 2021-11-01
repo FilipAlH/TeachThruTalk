@@ -8,9 +8,6 @@ body {
     background: #EEEEEE;
     font-family: 'Roboto', sans-serif
 }
-<<<<<<< HEAD
-/* Reply section styles */
-=======
 
 .card {
     width: 300px;
@@ -48,7 +45,6 @@ body {
     font-weight: bold
 }
 
->>>>>>> main
 .form-control {
     border-radius: 12px;
     border: 1px solid #F0F0F0;
@@ -61,12 +57,9 @@ body {
     font-size: 8px;
     color: #C4C4C4
 }
-<<<<<<< HEAD
-=======
 
 .highlight {
     background-color: yellow;
     position:relative;
     display:inline-block;
 }
->>>>>>> main
