@@ -11,8 +11,13 @@ console.log(thread_id)
     const response = await fetch(`/api/replies/${thread_id[1]}`, {
       method: 'POST',
       body: JSON.stringify({
+<<<<<<< HEAD
         body: body,
         thread_id: thread_id
+=======
+        body
+        
+>>>>>>> main
       }),
       headers: {
         'Content-Type': 'application/json',
