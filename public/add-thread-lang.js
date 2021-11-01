@@ -29,7 +29,7 @@ async function displayNewForm(event) {
   document.getElementById("newThread").style.display = "block";
   document.getElementById("newThreadBtn").style.display = "none";
 
-  const URLlocation = document.location.href.split('http://localhost:3001/api/threads/');
+  const URLlocation = document.location.href.split('https://teach-through-talk.herokuapp.com/api/threads/');
 
   if(URLlocation[1]) {
     document.getElementById('threadLanguagePrompt').style.display= "none"
@@ -37,7 +37,7 @@ async function displayNewForm(event) {
 }
 async function newFormHandler(event) {
     event.preventDefault();
-    const threads = document.location.href.split('http://localhost:3001/api/threads/');
+    const threads = document.location.href.split('https://teach-through-talk.herokuapp.com/api/threads/');
     if(threads[1]){
       let thread_id = threads[1]
       postNewThread(thread_id)

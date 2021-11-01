@@ -2,7 +2,9 @@
   style="background:url(https://www.tessa-dam.com/files/tessa-dam/background/background_paper-min.jpg);"
 >
   {{! Chat bubbles }}
-
+<div class="main-content row">
+<div class="asideLeft col-3" style:""></div>
+<div class="middle col-6">
   <div
     class="reply-area"
     style="  display: flex; justify-content: center; background-image: var(--body-bg); font-family: Helvetica, sans-serif;"
@@ -20,6 +22,8 @@
           Reply Section
         </div>
       </header>
+
+
       <div class="replies-content">
         {{#each replies as |reply|}}
           <main
@@ -118,7 +122,10 @@
           value="Submit"
         />
       </form>
+      </div>
     </section>
+  </div>
+  <div class="asideRight col-3" style:""></div>
   </div>
   {{! Submit text section }}
   {{!-- {{#if loggedIn}} --}}
