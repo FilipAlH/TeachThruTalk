@@ -1,5 +1,6 @@
+{{!-- Map API --}}
 <style>
-#map { position: absolute; top: 350px; bottom: 50px; left: 20vw; right: 20vw; width: 60%; }
+#map { position: absolute; top: 400px; bottom: 50px; left: 20vw; right: 20vw; width: 60%; }
 </style>
 <style>
 .marker {
@@ -10,8 +11,19 @@ cursor: pointer;
 padding: 0;
 }
 </style>
-<div>
+
+{{!-- Header  --}}
+      <div style="background: url(https://wallpapercave.com/wp/wp3847364.jpg) no-repeat; background-size:cover; height:100vh" class="jumbotron bg-cover text-white">
+        <div class="container py-5 text-center">
+          <h1 class="display-2 font-weight-bolder">Teach Thru Talk</h1>
+          <p class="font-italic">Use this app to learn you target language with people from around the world! Simply select the button below to navigate to our languages page, select the language you would like to speak in, and get to chatting!</p>
+          <a href="/api/languages" role="button" class="btn btn-danger px-5">Pick a language to get started</a>
+        </div>
+
+<div style="text-align:center; padding:10px; font-size:30px; margin-top:-30px">See who's chatting around the world!</div>
+
+<div style=>
     <div id="map"></div>
 </div>
-
+      </div>
 <script src="./mapdisplay.js"></script>
