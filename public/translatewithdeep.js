@@ -29,7 +29,7 @@ document.querySelector('#translate-button').addEventListener('click', function(e
 
 
 async function getTranslation(text, language) {
-    fetch("/api/translate/", {
+    fetch("/api/translate", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
