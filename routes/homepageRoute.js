@@ -7,7 +7,8 @@ const bcrypt = require('bcrypt')
 //get route to retrieve map
 router.get('/', async(req, res) => {
     try {
-        res.render('homepage')
+        res.render('homepage',{loggedIn: req.session.loggedIn})  
+        
     } catch(error) {
         console.log('shit failed')
         res.status(501).json(error)
@@ -34,24 +35,34 @@ router.get('/login', async (req, res) => {
 });
 
 //post route for login info
-router.post('/loginRequest', async (req, res) => {
+router.post('/login', async (req, res) => {
+
+    console.log(req.body)
     try {
-        const thisUser = req.body
-        const userReportedEmail = await User.findOne({ where: { email: req.body.email }})
-
+        const thisUser = req.body;
+        const userReportedEmail = await User.findOne({ where: { email: req.body.email }});
+        
+        //const userReportedEmail=true;
         if(!userReportedEmail) {
-            res.status(400).json({message: "Incorrect email or password, please try again"})
+            res.status(400).json({message: "Incorrect email or password, please try again"});
+            return;
 
-        } else {
-            const validatePassword = bcrypt.compareSync(thisUser.password, userReportedEmail.dataValues.password)
+        }  
+            const validatePassword = bcrypt.compareSync(thisUser.password, userReportedEmail.dataValues.password);
+            //  const validatePassword =true;
             console.log(req.body)
             if(!validatePassword) {
                 res.status(400).json({message: "Incorrect email or password, please try again"})
-                return
-            }
-
-            res.json({ message: 'You are now logged in!' });
+                return;
         }
+        req.session.save(() => {
+            console.log('this is saving wow')
+            req.session.loggedIn = true;
+            res.status(200).json({userReportedEmail});
+          });
+
+          
+          
     } catch (error) {
         res.status(404).json(error);
     }
@@ -60,7 +71,7 @@ router.post('/loginRequest', async (req, res) => {
 //get route for signin page
 router.get('/signup', async (req, res) => {
     try {
-        res.render('signup')
+        res.render('signup',{loggedIn: req.session.loggedIn})
     } catch (error) {
         res.status(400).json(error);
     }
@@ -76,10 +87,40 @@ router.post('/signup', async (req, res) => {
             password: req.body.password,
             location: req.body.location
         })
+        
+        req.session.save(() => {
+            req.session.logged_in = true;
+      
+            res.status(200).json(userData);
+          });
         res.status(200).json(userData)
     } catch (error) {
         res.status(500).json(error)
     }
 });
+ 
+
+router.get('/mapInfo', async(req, res) => {
+    try {
+        const userLocationAndName = await User.findAll({
+            attributes: ['name', 'location']
+        })
+
+        res.status(200).json(userLocationAndName)
+    } catch (error) {
+        res.status(404).json(error)
+    }
+})
+
+
+router.post('/logout', (req, res) => {
+    if (req.session.loggedIn) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    } else {
+      res.status(404).end();
+    }
+  });
 
 module.exports = router

@@ -5,7 +5,11 @@ const { Language } = require('../../models');
 router.get('/', async (req, res) => {
   try {
     const languageData = await Language.findAll();
-    res.status(200).json(languageData);
+    const languages = languageData.map((language) => language.get({ plain: true }))
+    console.log(languages)
+    res.render('languages', {
+      languages,loggedIn: req.session.loggedIn
+    })
   } catch (err) {
     res.status(400).json(err);
   }

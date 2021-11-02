@@ -21,15 +21,15 @@ Summary: This application aims to connect people of different native languages i
 
 ## Installation
 
-This app does not require an installation, and can be accessed via a web browswer on [here](https://TBD).
+This app does not require an installation, and can be accessed via a web browswer at [here](https://teach-through-talk.herokuapp.com/).
 
 ## Dependencies
 
-This application requires: TBD.
+This application requires no dependencies, apart from a browser on the client-end.
 
 ## Usage
 
-This application can be accessed on on the web [here](https://TBD).
+Users can post and comment on existing threads once they've signed up via [here](https://teach-through-talk.herokuapp.com/).
 
 ## Contributing
 
@@ -46,23 +46,19 @@ Click [here](https://choosealicense.com/licenses/mit) for MIT license informatio
 
 ## Tests
 
-Will be provided, TBD.
+N/A
 
 ## Technologies Used
 
-This application uses the following technologies: HTML, CSS, JavaScript, Bootstrap, Node, Express, Heroku.
+This application uses the following technologies: HTML, CSS, JavaScript, JQUERY, Bootstrap, Node, Express, SQL, Heroku.
 
 ## Questions
 
 Github: [This Repo](https://github.com/FilipAlH/TeachThruTalk#TeachThruTalk)
-Email: [Email Address](tbd@tbd.com)
+Email: Please visit our respective Github pages.
 
-Please feel free to contact us  further questions via email, which is our prefered method.
+Please feel free to contact us with comments or further questions via email, which is our prefered method.
 
 ## Screenshots
 
-![Screenshot](https://raw.githubusercontent.com/FilipAlH/TeachThruTalk/main/assets/images/screenshot_1.png)
-
-![Screenshot](https://raw.githubusercontent.com/FilipAlH/TeachThruTalk/main/assets/images/screenshot_2.png)
-
-![Screenshot](https://raw.githubusercontent.com/FilipAlH/TeachThruTalk/main/assets/images/screenshot_3.png)
+![Screenshot](https://raw.githubusercontent.com/FilipAlH/TeachThruTalk/main/assets/images/screenshot.png)

@@ -1,10 +1,26 @@
+<body style="background:url(https://www.tessa-dam.com/files/tessa-dam/background/background_paper-min.jpg)">
+  
 
 
-<div class="btn-group">
-  <button class="btn btn-secondary btn-lg dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Large button
-  </button>
-  <div class="dropdown-menu">
-    ...
+<div class="language-container">
+  <div class="card-header text-center">
+    <h2 style="color:black;">Click a Language to get started!</h2>
   </div>
+ <br>
+ 
+  <div class="container text-center">
+{{#each languages as |lang|}}
+    <div class="row">
+      <div class="col text-center">
+        <a href="/api/threads/{{id}}">
+        <button type="button" class="btn mb-2 mb-m-0 btn-outline-primary btn-block" style="background:#fff; color:#4f81c7; border-color:#4f81c7; box-shadow:3px 5px 0px 0px #769dd3; transition: all 0.3s">{{language_name}}</button>
+         </a>
+    </div>
+  </div>
+  <br>
+ </div>
+   {{/each}}
+  
 </div>
+
+</body>

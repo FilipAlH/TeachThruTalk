@@ -50,11 +50,9 @@ body {
     border: 1px solid #F0F0F0;
     font-size: 8px
 }
-
 .form-control:focus {
     box-shadow: none
 }
-
 .form-control::placeholder {
     font-size: 8px;
     color: #C4C4C4
@@ -64,4 +62,8 @@ body {
     background-color: yellow;
     position:relative;
     display:inline-block;
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> origin

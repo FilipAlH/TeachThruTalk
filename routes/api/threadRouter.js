@@ -9,7 +9,7 @@ router.get('/', async (req, res) => {
         const threads = threadData.map((thread) => thread.get({ plain: true }));
         // res.json(threadData)
         res.render('threads', {
-            threads,
+            threads, loggedIn: req.session.loggedIn
         });
     } catch (error) {
         res.status(500).json(error);
@@ -23,7 +23,7 @@ router.get('/:language_id', async (req, res) => {
         });
         const threads = threadData.map((thread) => thread.get({plain: true}))
         res.render('threads', {
-            threads
+            threads, loggedIn: req.session.loggedIn
         })
     } catch (error) {
         res.status(500).json(error)

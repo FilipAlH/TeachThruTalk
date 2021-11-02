@@ -3,47 +3,71 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+  <link href="https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.css" rel="stylesheet"/>
+  <script src="https://api.mapbox.com/mapbox-gl-js/v2.5.1/mapbox-gl.js"></script>
+  <link rel="stylesheet" href="/public/style.css">
   <title>Teach Thru Talk</title>
 </head>
 
 <body>
-  <div class="flex-column justify-space-around">
-    <header class="display-flex justify-space-between align-center text-center p-2">
-      <h1>
-          {{!-- go back to homepage --}}
-        <a href="/">Teach Thru Talk</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        <a href="/signup">sign up</a>
-        {{/if}}
-      </nav>
-    </header>
-    <main>
-      <!-- Render the sub layout -->
+{{!-- NAv BAR --}}
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="/"></a>
+            <div class="collapse navbar-collapse" id="navbarContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/api/threads">Thread Directory</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/api/languages">Available Languages</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    {{#if loggedIn}}
+                    <li class="nav-item">
+                        <button type="submit" id="logout">logout</button>
+                    </li>
+                    {{else}}
+                     <li class="nav-item">
+                        <a class="nav-link" href="/signup">Sign Up</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/login">Login</a>
+                    </li>
+                    {{/if}}
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+{{!-- Header  --}}
+      <div style="background: url(https://wallpapercave.com/wp/wp3847364.jpg) no-repeat; background-size:cover" class="jumbotron bg-cover text-white">
+        <div class="container py-5 text-center">
+          <h1 class="display-2 font-weight-bolder">Teach Thru Talk</h1>
+          <p class="font-italic">Use this app to learn you target language with people from around the world! Simply select the button below to navigate to our languages page, select the language you would like to speak in, and get to chatting!</p>
+          <a href="/api/languages" role="button" class="btn btn-danger px-5">Start Chatting Now</a>
+        </div>
+      </div>
+
+<!-- Render the sub layout -->
+<main>
       {{{ body }}}
+</main>
 
-    </main>
-    <footer>
+<!-- Render script for logged in users only -->
+{{#if loggedIn}}
+    <script src="/logout.js"></script>
+{{/if}}
 
-
-    </footer>
-
-    </div>
-<script src="/add-reply.js"></script>
-<script src="/signup.js"></script>
-    <!-- Render script for logged in users only -->
-    {{#if logged_in}}
-      <script src="/js/logout.js"></script>
-    {{/if}}
-
-  </body>
+</body>
 
 </html>
